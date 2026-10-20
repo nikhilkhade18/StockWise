@@ -16,14 +16,7 @@ app.add_middleware(
 )
 
 
-# 1. Database connection
-def get_connection():
-    return psycopg.connect(
-        host="localhost",
-        dbname="stockwise_db",
-        user="postgres",
-        password=os.getenv("DB_PASSWORD")
-    )
+from db import get_connection
 
 
 # 2. Request models
