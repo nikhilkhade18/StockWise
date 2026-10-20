@@ -7,16 +7,19 @@ from db import get_connection
 
 app = FastAPI(title="StockWise API")
 
+
 app.add_middleware(
     CORSMiddleware,
     allow_origins=[
         "http://localhost:5173",
         "http://127.0.0.1:5173",
+        "https://stockwise-ashen-one.vercel.app",
     ],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
 
 
 # 1. Create database tables when the app starts
